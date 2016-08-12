@@ -101,3 +101,111 @@ header.bar .icon {
 .button-submit{
   width: 100%;
 }
+
+.form{
+  margin: 1rem 0;
+  .form-item{
+    padding: 0.8rem;
+
+    .item-title{
+      font-size: 0.9rem;
+      width: auto;
+    }
+    .item-input{
+      margin: 0;
+      input, textarea{
+        font-size: 0.7rem;
+        border: 1px solid #ECECEC;
+        border-radius: 3px;
+      }
+    }
+
+    .item-content.label-checkbox{
+      justify-content: flex-start;
+      padding-left: 0;
+    }
+    .checkbox-row{
+      padding-left: 0.1rem;
+      border: 1px solid #ececec;
+
+      &:first-child{
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+      &:last-child{
+        border-radius: 0 0 0.25rem 0.25rem;
+      }
+      & + .checkbox-row{
+        margin-top: -1px;
+      }
+    }
+
+    .item-start{
+      display: flex;
+      padding: 0.3rem 0.05rem;
+      border: 1px solid #ececec;
+      border-radius: 3px;
+
+      .score{
+        display: none;
+      }
+      .start{
+        flex: 1;
+        width: 30px;
+        height: 24px;
+        background: url(../imgs/global/star_gray.png) no-repeat center center;
+        background-size: contain;
+        transition: background 300ms ease-in-out;
+      }
+      .score:checked ~ .start1, .score:checked ~ .start2{
+        background-image: url(../imgs/global/star_light.png);
+      }
+      .score1:checked ~ .start2{
+        background-image: url(../imgs/global/star_gray.png);
+      }
+      .score3:checked ~ .start3, .score4:checked ~ .start3, .score5:checked ~ .start3{
+        background-image: url(../imgs/global/star_light.png);
+      }
+      .score4:checked ~ .start4, .score5:checked ~ .start4{
+        background-image: url(../imgs/global/star_light.png);
+      }
+      .score5:checked ~ .start5{
+        background-image: url(../imgs/global/star_light.png);
+      }
+    }
+  }
+
+  .form-item.error{
+    &:after{
+      content: attr(data-tips);
+      padding-left: 1rem;
+      color: red;
+      height: 0.5rem;
+      background: url(../imgs/global/error.png) no-repeat left center;
+      background-size: contain;
+    }
+  }
+  .form-item.success{
+    &:after{
+      content: ' ';
+      padding-left: 1rem;
+      color: red;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: url(../imgs/global/success.png) no-repeat left center;
+      background-size: contain;
+    }
+  }
+
+}
+.button-upload{
+  position: relative;
+
+  input[type=file]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+}
