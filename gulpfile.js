@@ -15,13 +15,14 @@ var cache = require('gulp-cached');
 var less = require('gulp-less');
 var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
+var connect = require('gulp-connect'); //文件服务器
 
 var paths = {
-  scripts: ['example/js/**/*.js'],
-  font: 'example/font/**/*',
-  imgs: 'example/imgs/**/*',
-  css: 'example/css/**/*.less',
-  html: 'example/**/*.html'
+  scripts: ['sc/js/**/*.js'],
+  font: 'sc/font/**/*',
+  imgs: 'sc/imgs/**/*',
+  css: 'sc/css/**/*.less',
+  html: 'sc/**/*.html'
 };
 
 // Not all tasks need to use streams
@@ -37,7 +38,8 @@ gulp.task('scripts', function() {
       .pipe(uglify())
       .pipe(concat('all.min.js'))
     // .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('build/js'))
+    .pipe(connect.reload());
 });
 
 gulp.task('imgs', function() {
@@ -49,14 +51,15 @@ gulp.task('imgs', function() {
             // multipass: true, //类型：Boolean 默认：false 多次优化svg直到完全优化
             use: [pngquant({quality: 70})] //使用pngquant深度压缩png图片的imagemin插件
         }))
-    .pipe(gulp.dest('build/imgs'));
+    .pipe(gulp.dest('build/imgs'))
+    .pipe(connect.reload());
 });
 
 
 var csspipe = lazypipe()
     .pipe(less)
     .pipe(autoprefixer, {
-        browsers: ['last 2 versions', 'ios 7', 'ios 8', 'android 4'],// css兼容的浏览器类型或平台
+        browsers: ['last 2 versions', 'ios 7', 'ios 8', 'android 4', 'IE 7', 'IE 8'],// css兼容的浏览器类型或平台
         cascade: false
       })
     .pipe(base64, {
@@ -76,7 +79,8 @@ gulp.task('css', ['imgs'], function() {
     .pipe(concat('app.min.css'))
     .pipe(csspipe())
     // .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest('build/css'))
+    .pipe(connect.reload());
 });
 
 gulp.task('html', ['imgs'], function() {
@@ -87,7 +91,8 @@ gulp.task('html', ['imgs'], function() {
     // .pipe(gulpif('*.js', rev()))
     .pipe(gulpif('*.css', csspipe()))
     // .pipe(revReplace())
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('build/'))
+    .pipe(connect.reload());
 });
 
 gulp.task('font', function(){
@@ -99,12 +104,23 @@ gulp.task('font', function(){
 gulp.task('build', ['imgs', 'font', 'html']);
 
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.scripts, ['scripts', 'html']);
   gulp.watch(paths.imgs, ['imgs']);
-  gulp.watch(paths.css, ['css']);
+  gulp.watch(paths.css, ['css', 'html']);
+  gulp.watch(paths.html, ['html']);
+});
+
+//使用connect启动一个Web服务器
+gulp.task('connect', function() {
+    connect.server({
+        root: 'build',
+        livereload: true,
+        port: 8000,
+    });
 });
 
 
+gulp.task('watchme', ['connect', 'watch']);
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['clean'], function(){
   gulp.start(['build']);
