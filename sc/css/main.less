@@ -119,12 +119,13 @@ li{
       opacity: 0.7;
       border-color: rgba(255, 255, 255, 0.5);
       transition: all ease-out 300ms;
+      cursor: pointer;
 
       & + .item{
         margin-left: 38px;
       }
 
-      &:hover{
+      &:hover, &.current{
         opacity: 1;
         border-color: rgba(255, 255, 255, 1);
       }
@@ -162,6 +163,7 @@ li{
   height: 52px;
   background: url(../imgs/screen1_arrow.png) no-repeat;
   background-size: contain;
+  cursor: pointer;
 
   &:hover{
     background-image: url(../imgs/screen1_arrow_hover.png);
@@ -309,6 +311,7 @@ li{
     .item{
       .sub-wrap{
         background-color: #f2f2f2;
+        cursor: pointer;
       }
 
       &.active{
@@ -404,6 +407,7 @@ li{
     border-bottom: 1px solid #a7a7a7;
     background: url(../imgs/side_icon_regi.png) no-repeat center 15px;
     background-color: #5a5a5a;
+    cursor: pointer;
 
 
     & + .item{

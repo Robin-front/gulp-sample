@@ -2,6 +2,7 @@ $(function(){
   var winH = $(window).height();
   var $body = $('body');
   var $screen = $('.J_screen');
+  var $nav = $('.J_nav');
   // console.log(winH);
 
   // screen布局
@@ -14,6 +15,25 @@ $(function(){
     // console.log('padding', padding);
     if (!contentH) { return false; }
     $(this).css({ padding: padding + 'px 0'});
+  });
+
+  // 轮换首屏焦点
+  (function slide(){
+    setTimeout(function(){
+      var $current = $('.J_feature_item').filter('.current');
+      var index = $('.J_feature_item').index($current);
+      $current.removeClass('current');
+      index = ++index > 2 ? 0 : index;
+      // console.log('index', index);
+      $('.J_feature_item').eq(index).addClass('current');
+      slide();
+    }, 2000);
+  })();
+
+  $(document).on('click', '.J_feature_item', function(){
+    var index = $('.J_feature_item').index($(this));
+    var top = $screen.eq(++index).offset().top;
+    $body.animate({scrollTop: top}, 300);
   });
 
   // to top
@@ -64,24 +84,44 @@ $(function(){
   var lastScrollTop = null;
   $(window).scroll(throttleV2(function(){
     var scrollTop = $body.scrollTop();
-    $screen.each(function(){
+    $screen.each(function(index){
       var top = $(this).offset().top;
       if(lastScrollTop > scrollTop){
         // console.log('up');
         if(top < scrollTop && (scrollTop - top) < 600) {
           // console.log(123);
           $body.animate({scrollTop: top}, 300);
+          // $nav.find('.J_item').eq(index)
+          //   .addClass('current')
+          //   .siblings().removeClass('current');
         }
       } else {
         // console.log('down');
         if(top > scrollTop && (top - scrollTop) < 600) {
           $body.animate({scrollTop: top}, 300);
+
         }
+      }
+
+      // 对应菜单
+      if ((top - scrollTop) < 600){
+        $nav.find('.J_item').eq(index)
+          .addClass('current')
+          .siblings().removeClass('current');
       }
     });
     lastScrollTop = scrollTop;
   }, 50, 1000));
 
+  // switch screen
+  $nav.on('click', '.J_item', function(){
+    var $this = $(this);
+    var index = $nav.children().index($this)
+    // console.log('index', index);
+    var top = $screen.eq(index).offset().top;
+    $body.animate({scrollTop: top}, 300);
+    $this.addClass('current').siblings().removeClass('current');
+  });
 
   //list slide
   $(document).on('click', '.J_list', function() {
