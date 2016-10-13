@@ -18,11 +18,11 @@ var revReplace = require('gulp-rev-replace');
 var connect = require('gulp-connect'); //文件服务器
 
 var paths = {
-  scripts: ['sc/js/**/*.js'],
-  font: 'sc/font/**/*',
-  imgs: 'sc/imgs/**/*',
-  css: 'sc/css/**/*.less',
-  html: 'sc/**/*.html'
+  scripts: ['scMobile/js/**/*.js'],
+  font: 'scMobile/font/**/*',
+  imgs: 'scMobile/imgs/**/*',
+  css: 'scMobile/css/**/*.less',
+  html: 'scMobile/**/*.html'
 };
 
 // Not all tasks need to use streams
