@@ -117,6 +117,7 @@ li{
       background-repeat: no-repeat;
       background-position: 50% 30px;
       opacity: 0.7;
+      filter: alpha(opacity=70);
       border-color: rgba(255, 255, 255, 0.5);
       transition: all ease-out 300ms;
       cursor: pointer;
@@ -127,6 +128,7 @@ li{
 
       &:hover, &.current{
         opacity: 1;
+        filter: alpha(opacity=100);
         border-color: rgba(255, 255, 255, 1);
       }
 
@@ -208,6 +210,7 @@ li{
         font-size: 20px;
         line-height: 2;
         opacity: 0.8;
+        filter: alpha(opacity=80);
       }
     }
 
@@ -225,6 +228,7 @@ li{
 
     &:hover{
       opacity: 0.8;
+      filter: alpha(opacity=80);
     }
   }
 }
@@ -271,6 +275,7 @@ li{
         font-size: 20px;
         line-height: 2;
         opacity: 0.6;
+        filter: alpha(opacity=60);
       }
     }
 
@@ -348,6 +353,7 @@ li{
           background: url(../imgs/screen2_arrow.png) no-repeat;
           background-size: contain;
           opacity: 0.8;
+          filter: alpha(opacity=80);
           transform: rotate(-90deg);
           transition: transform ease-out 300ms;
         }
@@ -360,6 +366,7 @@ li{
         line-height: 2;
         color: #212121;
         opacity: 0.8;
+        filter: alpha(opacity=80);
       }
 
       & + .item{

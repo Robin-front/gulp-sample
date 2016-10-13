@@ -59,7 +59,7 @@ gulp.task('imgs', function() {
 var csspipe = lazypipe()
     .pipe(less)
     .pipe(autoprefixer, {
-        browsers: ['last 2 versions', 'ios 7', 'ios 8', 'android 4', 'IE 7', 'IE 8'],// css兼容的浏览器类型或平台
+        browsers: ['> 1%', 'IE 7', 'IE 8', 'ios 7', 'ios 8', 'android 4'],// css兼容的浏览器类型或平台
         cascade: false
       })
     .pipe(base64, {
@@ -115,7 +115,7 @@ gulp.task('connect', function() {
     connect.server({
         root: 'build',
         livereload: true,
-        port: 8000,
+        port: 80,
     });
 });
 
