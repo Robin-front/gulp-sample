@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>凤凰娱乐</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="description" content="">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui">
+		<meta http-equiv="cleartype" content="on">
     <!-- build:css css/index.css -->
     <link rel="stylesheet/less" type="text/css" href="css/main.less" charset="utf-8">
     <!-- endbuild -->
@@ -16,34 +20,32 @@
   <body>
 
   <div class="nav">
-    <div class="content">
+    <div class="logo"></div>
+    <!-- <img class="logo" src="imgs/LOGO.png" alt="logo"> -->
 
-      <div class="logo"></div>
-      <!-- <img class="logo" src="imgs/LOGO.png" alt="logo"> -->
-
-      <ul class="menu clearfix J_nav">
-        <li class="item current J_item"><a href="#">首页</a></li>
-        <li class="item  J_item"><a href="#">资金</a></li>
-        <li class="item  J_item"><a href="#">服务</a></li>
-        <li class="item  J_item"><a href="#">活动</a></li>
-      </ul>
-    </div>
+    <div class="menu-icon J_menu"></div>
+    <ul class="menu clearfix J_nav">
+      <li class="item current J_item"><a href="#">首页</a></li>
+      <li class="item  J_item"><a href="#">资金</a></li>
+      <li class="item  J_item"><a href="#">服务</a></li>
+      <li class="item  J_item"><a href="#">活动</a></li>
+    </ul>
   </div>
 
-  <div class="screen screen-1 J_screen" id="screen1">
+  <div class="screen screen-1 J_screen current" id="screen1">
     <div class="content J_content">
       <div class="logo"></div>
       <!-- <img class="logo" src="imgs/screen1_logo.png" alt="logo"> -->
       <ul class="feature-list clearfix">
         <li class="item safe J_feature_item current">
-          <p>凤凰资金双重保障</p>
+          <p>凤凰资金<br>双重保障</p>
         </li>
         <li class="item vip J_feature_item">
-          <p>VIP服务，业内唯一</p>
+          <p>VIP服务<br>业内唯一</p>
         </li>
         <li class="item-warp">
           <div class="item superise J_feature_item">
-            <p>凤凰活动，惊喜不断</p>
+            <p>凤凰活动<br>惊喜不断</p>
           </div>
           <p class="gift">注册即送18元礼金</p>
         </li>
@@ -72,7 +74,6 @@
           </div>
         </li>
       </ul>
-      <i class="arrow J_next_screen"></i>
     </div>
   </div>
 
@@ -96,7 +97,6 @@
           <p class="desc">美女客服照顾您的投彩和生活大小事</p>
         </li>
       </ul>
-      <i class="arrow J_next_screen"></i>
     </div>
   </div>
 
@@ -177,13 +177,14 @@
   </div>
 
   <ul class="sidebar">
-    <li class="item signup">立即<br>注册</li>
-    <li class="item signin">立即<br>登录</li>
+    <li class="item signup"><a href="#">立即<br>注册</a></li>
+    <li class="item signin"><a href="#">立即<br>登录</a></li>
     <li class="item toTop J_top"></li>
   </ul>
-
   <!-- build:js js/index.js -->
-	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/fx.js"></script>
+	<script type="text/javascript" src="js/touch.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<!-- endbuild -->
   </body>

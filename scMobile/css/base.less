@@ -1,0 +1,90 @@
+/*去除默认边距*/
+html,body,header,section,footer,article,nav,aside,dialog,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,textarea {
+	margin: 0;
+	padding: 0;
+}
+/*阻止旋转屏幕时自动调整字体大小*/
+body {
+	min-width:320px;
+	font: 1rem/1.5em "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+	color:#333;
+}
+/* media查询，设置htmlfont-size值 */
+html {
+  font-size: 20px;
+}
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
+
+/* 禁止选中文本（如无文本选中需求，此为必选项） */
+html, body {
+	-webkit-user-select: none;
+			user-select: none;
+}
+h1,h2,h3,h4,h5,h6,strong {
+	font-weight: normal;
+	font-size: 100%;
+}
+em {
+	font-style: normal;
+}
+ul,ol {
+	list-style-type:none;
+}
+a {
+	display: block;
+	text-decoration:none;
+}
+a:visited,a:hover {
+	text-decoration:none;
+}
+input,button,select,textarea{
+	-webkit-appearance: none;
+			appearance: none;
+}
+textarea {
+	resize: none;
+}
+/* 禁止长按链接与图片弹出菜单 */
+a,img {
+	-webkit-touch-callout: none;
+			touch-callout: none;
+}
+/*去掉手持设备点击时出现的透明层*/
+a,button,input,select{
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+    -webkit-touch-callout: none;
+}
+
+.pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+    -webkit-appearance: none;
+}
