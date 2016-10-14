@@ -101,7 +101,7 @@ gulp.task('html', ['imgs'], function() {
   return gulp.src(paths.html)
     .pipe(useref())
     .pipe(cache('useref'))
-    // .pipe(gulpif('*.js', uglify()))
+    .pipe(gulpif('*.js', uglify()))
     // .pipe(gulpif('*.js', rev()))
     .pipe(gulpif('*.css', csspipe()))
     // .pipe(revReplace())
