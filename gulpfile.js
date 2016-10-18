@@ -21,11 +21,11 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 
 var paths = {
-  scripts: ['scMobile/js/**/*.js'],
-  font: 'scMobile/font/**/*',
-  imgs: 'scMobile/imgs/**/*',
-  css: 'scMobile/css/**/*.less',
-  html: 'scMobile/**/*.html'
+  scripts: ['jilisaibao/js/**/*.js'],
+  font: 'jilisaibao/font/**/*',
+  imgs: 'jilisaibao/imgs/**/*',
+  css: 'jilisaibao/css/**/*.less',
+  html: 'jilisaibao/**/*.html'
 };
 
 // Not all tasks need to use streams
