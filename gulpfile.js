@@ -3,7 +3,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
-var minifycss = require('gulp-minify-css');
+// var minifycss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 // var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
@@ -85,7 +86,7 @@ var csspipe = lazypipe()
         debug: true
       })
     // .pipe(rev);
-    // .pipe(minifycss);
+    // .pipe(cleanCSS, {compatibility: 'ie8'});
 
 gulp.task('css', ['imgs'], function() {
   return gulp.src(paths.css)
