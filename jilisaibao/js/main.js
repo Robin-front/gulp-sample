@@ -1,6 +1,6 @@
 $(function() {
   var $screen = $('.J_screen');
-  var $body = $('body');
+  var $body = $('html, body');
   var $nav  = $('.J_nav');
 
   $(document).on('click', '.J_hongbao', function(){

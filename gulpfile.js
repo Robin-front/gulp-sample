@@ -85,7 +85,7 @@ var csspipe = lazypipe()
         debug: true
       })
     // .pipe(rev);
-    .pipe(minifycss);
+    // .pipe(minifycss);
 
 gulp.task('css', ['imgs'], function() {
   return gulp.src(paths.css)
@@ -101,7 +101,7 @@ gulp.task('html', ['imgs'], function() {
   return gulp.src(paths.html)
     .pipe(useref())
     .pipe(cache('useref'))
-    .pipe(gulpif('*.js', uglify()))
+    // .pipe(gulpif('*.js', uglify()))
     // .pipe(gulpif('*.js', rev()))
     .pipe(gulpif('*.css', csspipe()))
     // .pipe(revReplace())
