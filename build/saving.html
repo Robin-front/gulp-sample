@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>存款</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/index.css">
+<body>
+
+  <div class="banner"></div>
+
+  <div class="navbar">
+    <div class="container">
+      <!-- 登录后 -->
+      <div class="nav-box">
+        <ul class="nav clearfix">
+          <li class="item"><a href="./index.html">首页</a></li>
+          <li class="item current"><a href="./saving.html">存款</a></li>
+          <li class="item"><a href="./withdrawal.html">取款</a></li>
+          <li class="item"><a href="./bindATM.html">绑定银行卡</a></li>
+          <li class="item"><a href="./record.html">存取款记录</a></li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-default" href="./changePassword.html;">修改密码</a>
+          <a class="btn btn-default" href="javascript:;">安全退出</a>
+        </div>
+      </div>
+      <!-- 登录后 end -->
+      <div class="notice">
+        <span class="caption">公告：</span>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="javascript:;">尊敬的用户大家好，捕鱼网站已经完成了网站的全面升级，升级过程及新版网站阅览</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:;">尊敬的用户大家好，捕鱼网站已经完成了网站的全面升级，升级过程及新版网站阅览</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:;">尊敬的用户大家好，捕鱼网站已经完成了网站的全面升级，升级过程及新版网站阅览</a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:;">尊敬的用户大家好，捕鱼网站已经完成了网站的全面升级，升级过程及新版网站阅览</a>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <a class="online" href="javascript:;">7*24小时在线客服</a>
+      <div class="main-box">
+        <p class="balance">尊敬的会员：***，您的余额：0.00元</p>
+        <form class="saving J_saving">
+          <ul class="saving-list clearfix">
+            <li class="item current">
+              <input type="radio" id="wx" value="wx" name="payment" checked="checked">
+              <label class="wx" for="wx"><span>微信</span></label>
+            </li>
+            <li class="item">
+              <input type="radio" id="unipay" value="unipay" name="payment">
+              <label class="unipay" for="unipay"><span>银联支付</span></label>
+            </li>
+            <li class="item">
+              <input type="radio" id="self" value="myself" name="payment">
+              <label class="self" for="self"><span>手工存款</span></label>
+            </li>
+          </ul>
+          <p class="tips">若在存款过程中遇到任何问题，请随时联系在线客服。</p>
+
+          <div class="price-box">
+            <label for="amout">金额：</label>
+            <div class="price">
+              <input id="amout" type="text" class="input">
+              <p class="tips">单次存款最低金额20元，最高金额5000元</p>
+            </div>
+          </div>
+
+          <button class="btn btn-default btn-submit" type="submit">提交</button>
+        </form>
+
+        <div class="alert J_success">
+          <p>您的手工存款订单已提交成功</p>
+          <button class="btn btn-default btn-close J_close_tips" type="button">确定</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-1.8.1.min.js"></script>
+  <script src="js/saving.js"></script>
+</body>
+
+</html>
