@@ -49,11 +49,11 @@ body {
 .btn {
     display: inline-block;
     border: 0;
-    padding: 0;
+    padding: 0 17px;
     outline: none;
     box-sizing: border-box;
     cursor: pointer;
-    box-shadow: 0px 3px 8px #333;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
 
     &.btn-link {
         color: #fff700;
@@ -69,7 +69,6 @@ body {
         border-radius: 4px;
         height: 42px;
         line-height: 42px;
-        padding: 0 4px;
         text-decoration: none;
     }
 }
@@ -195,13 +194,25 @@ body {
         position: relative;
         clear: both;
         background: transparent;
-        border: 2px solid #90d2f3;
-        border-radius: 20px;
-        box-shadow: 0 0 10px #666;
+        width: 1217px;
+        height: 767px;
+        box-sizing: border-box;
+        // border: 2px solid #90d2f3;
+        // border-radius: 20px;
+        // box-shadow: 0 0 10px #666;
         padding: 20px;
         margin-left: -100px;
         margin-right: -100px;
+        background: url(../imgs/index_bg.png) no-repeat;
 
+        &.blue-box{
+          height: 967px;
+          background-image: url(../imgs/blue_bg.png);
+        }
+        &.black-box{
+          height: 967px;
+          background-image: url(../imgs/black_bg.png);
+        }
 
         .balance {
             position: absolute;
@@ -221,15 +232,15 @@ body {
         min-height: 900px;
         padding: 50px;
         border-radius: 20px;
-        background: url(../imgs/coin.png) no-repeat center 100px;
-        background-color: #01152c;
-        background-color: rgba(1, 21, 44, 0.7);
+        // background: url(../imgs/coin.png) no-repeat center 100px;
+        // background-color: #01152c;
+        // background-color: rgba(1, 21, 44, 0.7);
     }
     .entries, .register-form{
       padding: 50px;
       border-radius: 20px;
-      background-color: #044396;
-      background-color: rgba(4, 67, 150, 0.7);
+      // background-color: #044396;
+      // background-color: rgba(4, 67, 150, 0.7);
     }
 
     .entries {
@@ -292,7 +303,7 @@ body {
             }
 
             .input {
-                box-shadow: 0 2px 2px #222;
+                box-shadow: 0 4px 4px rgba(0,0,0,.35);
             }
 
             .tips {
@@ -373,7 +384,7 @@ body {
                     line-height: 76px;
                     color: #001c62;
                     cursor: pointer;
-                    box-shadow: 0 2px 2px #222;
+                    box-shadow: 0 4px 4px rgba(0,0,0,.35);
                     box-sizing: border-box;
                 }
 
@@ -478,7 +489,7 @@ body {
             input,
             select {
                 width: 350px;
-                box-shadow: 0 3px 8px #333;
+                box-shadow: 0 4px 4px rgba(0,0,0,.35);
             }
         }
 
@@ -530,7 +541,7 @@ body {
             padding-top: 50px;
         }
         .select{
-          box-shadow: 0 1px 8px #333;
+          box-shadow: 0 4px 4px rgba(0,0,0,.35);
         }
     }
 
