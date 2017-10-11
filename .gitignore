@@ -1,0 +1,8 @@
+yarn.lock
+.DS_Store
+dist
+build
+node_modules
+.git
+vendor-manifest.json
+*.tar.gz

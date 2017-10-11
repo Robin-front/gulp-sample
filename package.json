@@ -1,0 +1,58 @@
+{
+  "name": "static-pages-start-kit-with-gulp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "robin <lb.robin1991@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp watch",
+    "start:mobile": "./node_modules/.bin/better-npm-run start:mobile",
+    "build": "./node_modules/.bin/gulp",
+    "build:mobile": "./node_modules/.bin/better-npm-run build:mobile",
+    "publish": "rm -rf build && npm run build",
+    "publish:mobile": "rm -rf build && npm run build:mobile"
+  },
+  "betterScripts": {
+    "start:mobile": {
+      "command": "./node_modules/.bin/gulp watch",
+      "env": {
+        "NODE_ENV": "mobile",
+        "DEBUG": "app:mobile"
+      }
+    },
+    "build:mobile": {
+      "command": "./node_modules/.bin/gulp",
+      "env": {
+        "NODE_ENV": "mobile",
+        "DEBUG": "app:mobile"
+      }
+    }
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "better-npm-run": "^0.1.0",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-less": "^3.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "imagemin-pngquant": "^5.0.1",
+    "lazypipe": "^1.0.1",
+    "opn": "^5.1.0",
+    "postcss-px2rem": "^0.3.0"
+  }
+}
