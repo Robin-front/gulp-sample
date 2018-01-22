@@ -53,6 +53,7 @@
     "imagemin-pngquant": "^5.0.1",
     "lazypipe": "^1.0.1",
     "opn": "^5.1.0",
+    "postcss-cssnext": "^3.0.2",
     "postcss-px2rem": "^0.3.0"
   }
 }

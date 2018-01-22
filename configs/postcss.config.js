@@ -1,45 +1,44 @@
 
 const cssnano = require('cssnano');
+const cssnext = require('postcss-cssnext');
 const px2rem = require('postcss-px2rem');
-// const px2rem = require('postcss-plugin-px2rem');
 const config = require('./config.js');
-// var sprites = require('postcss-sprites');
+var sprites = require('postcss-sprites');
 
 const isMobile = (process.env.NODE_ENV === 'mobile');
 const noop = function (){};
 
-// var opts = {
-// 	stylesheetPath: './dist/css',
-// 	spritePath: './dist/imgs/sprite/'
-// };
-
-// const pxtoremOpt = {
-//   rootValue: config.remUnit,
-//   unitPrecision: 5,
-//   propWhiteList: [],
-//   propBlackList: ['font-size', 'border'],
-//   selectorBlackList: [],
-//   ignoreIdentifier: false,
-//   replace: true,
-//   mediaQuery: true,
-//   minPixelValue: 2
-// };
-
+var opts = {
+  stylesheetPath: './build/css',
+  spritePath: './build/imgs/',
+  filterBy: function (image) {
+    // Allow only png files
+    // background: url(../imgs/logo.png?__sprite) no-repeat;
+    if (!/__sprite/.test(image.originalUrl)) {
+      return Promise.reject();
+    }
+    return Promise.resolve();
+  }
+};
 module.exports = {
   plugins: [
-    (isMobile?px2rem({remUnit: config.remUnit}):noop),
+    (isMobile ? px2rem({ remUnit: config.remUnit }) : noop),
+    cssnext({
+      browsers: [
+        '>1%',
+        'last 5 versions',
+        'Firefox ESR',
+      ],
+      flexbox: 'no-2009',
+    }),
     cssnano({
-      autoprefixer: { // 添加css浏览器前缀
-        add: true,
-        remove: true,
-        browsers: ['>0.1%']
-      },
+      autoprefixer: false,
       discardComments: { // 删除所有css注释
         removeAll: true
       },
       safe: true,
       sourcemap: false
     }),
-    // sprites(opts),
+    sprites(opts),
     ]
 }
