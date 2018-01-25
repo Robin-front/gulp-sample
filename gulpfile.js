@@ -12,10 +12,7 @@ var gulpif = require('gulp-if');
 var lazypipe = require('lazypipe');
 var cache = require('gulp-cached');
 var less = require('gulp-less');
-var sass = require('gulp-sass');
 var px2rem = require('postcss-px2rem');
-// var rev = require('gulp-rev');
-// var revReplace = require('gulp-rev-replace');
 var connect = require('gulp-connect'); //文件服务器
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -64,7 +61,6 @@ gulp.task('imgs', function() {
 });
 
 const csspipe = lazypipe()
-    .pipe(sass)
     .pipe(postcss, postcssPlugins.plugins)
     // .pipe(rev);
     .pipe(minifycss);

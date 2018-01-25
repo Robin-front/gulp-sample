@@ -47,13 +47,13 @@
     "gulp-less": "^3.3.2",
     "gulp-minify-css": "^1.2.4",
     "gulp-postcss": "^7.0.0",
-    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.2",
     "imagemin-pngquant": "^5.0.1",
     "lazypipe": "^1.0.1",
     "opn": "^5.1.0",
     "postcss-cssnext": "^3.0.2",
-    "postcss-px2rem": "^0.3.0"
+    "postcss-px2rem": "^0.3.0",
+    "postcss-sprites": "^4.2.1"
   }
 }

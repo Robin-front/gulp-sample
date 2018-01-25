@@ -18,11 +18,13 @@ var opts = {
       return Promise.reject();
     }
     return Promise.resolve();
+  },
+  spritesmith: {
+    padding: 4,
   }
 };
 module.exports = {
   plugins: [
-    (isMobile ? px2rem({ remUnit: config.remUnit }) : noop),
     cssnext({
       browsers: [
         '>1%',
@@ -31,6 +33,7 @@ module.exports = {
       ],
       flexbox: 'no-2009',
     }),
+    (isMobile ? px2rem({ remUnit: config.remUnit }) : noop),
     cssnano({
       autoprefixer: false,
       discardComments: { // 删除所有css注释
