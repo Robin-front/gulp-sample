@@ -19,8 +19,8 @@ yarn build:modile
 
 ```html
 <!-- build:css css/index.css -->
-<link rel="stylesheet" href="./css/mobile.reset.scss">
-<link rel="stylesheet" href="./css/mobile.scss">
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/index.css">
 <!-- endbuild -->
 
 // output  css/index.css
