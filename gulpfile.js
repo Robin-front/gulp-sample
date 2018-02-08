@@ -16,6 +16,7 @@ const changed = require("gulp-changed");
 
 // const babel = require('gulp-babel');
 // const browserify = require('gulp-browserify');
+const config = require("./configs/config.js");
 const postcssPlugins = require("./configs/postcss.config.js");
 const isMobile = process.env.NODE_ENV === "mobile";
 
@@ -24,11 +25,17 @@ console.log("isMobile", isMobile);
 
 const paths = {
   scripts: path.resolve(basePath, "./src/js/**/*.js"),
-  font: path.resolve(baPath, "./src/font/**/*"),
+  font: path.resolve(basePath, "./src/font/**/*"),
   imgs: path.resolve(basePath, "./src/imgs/**/*"),
   css: path.resolve(basePath, "./src/css/**/*.css"),
   html: path.resolve(basePath, "./src/**/*.html")
 };
+
+gulp.task("copy", function (){
+  config.needCopyFiles.forEach(function(obj) {
+    gulp.src(obj.from).pipe(gulp.dest(obj.to));
+  });
+});
 
 gulp.task("clean", function() {
   return del(["build"]);
@@ -99,7 +106,7 @@ gulp.task("connect", function() {
   opn("http://localhost:8080");
 });
 
-gulp.task("build", ["imgs", "font", "html"]);
+gulp.task("build", ["imgs", "font", "html", "copy"]);
 gulp.task("watch", ["connect", "watchme"]);
 gulp.task("default", ["clean"], function() {
   gulp.start(["build"]);

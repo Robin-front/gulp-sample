@@ -8,13 +8,26 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta content="trmaelephone=no" name="fot-detection">
   <title>首页</title>
-  <!-- build:js js/flexible.min.js -->
-  <script src="./js/flexible.min.js" charset="utf-8"></script>
-  <!-- endbuild -->
   <!-- build:css css/index.css -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/index.css">
   <!-- endbuild -->
+  <script>
+    // only for mobile
+    // 不支持vw时，降级使用js,依据fontSize大小与预期vw大小不一致来判断
+    // (function () {
+    //   const htmlSize = parseFloat(
+    //     window.getComputedStyle(document.documentElement).fontSize,
+    //     10
+    //   );
+    //   const screenWidth = window.screen.width;
+    //   if (htmlSize !== screenWidth / 10) {
+    //     const script = document.createElement("script");
+    //     script.src = "./js/flexible.min.js";
+    //     document.querySelector("head").appendChild(script);
+    //   }
+    // })();
+  </script>
 </head>
 
 <body>

@@ -26,3 +26,14 @@ html, body {
      you can enable it on the places you think appropriate */
   user-select: none;
 }
+
+/* only for mobile */
+/* :root {
+  --design_size: 750;
+  --rem_size: 75;
+}
+
+html {
+  font-size: 20px;
+  font-size: calc(var(--rem_size)/var(--design_size)*100)vw;
+} */
