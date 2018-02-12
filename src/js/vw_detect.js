@@ -44,6 +44,7 @@
   var body = document.body;
   if(!body){
     body = document.createElement('body');
+    body.ishack = true;
   }
   body.appendChild(div);
   document.documentElement.appendChild(body);
@@ -56,5 +57,5 @@
     document.querySelector("head").appendChild(script);
   }
   body.removeChild(div);
-  document.documentElement.removeChild(body);
+  body.ishack && document.documentElement.removeChild(body);
 })();
